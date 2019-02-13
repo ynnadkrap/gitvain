@@ -1,0 +1,9 @@
+.App {
+  margin: 15px;
+}
+
+th, td {
+  border-style: solid;
+  border-width: 1px;
+  padding: 5px;
+}
