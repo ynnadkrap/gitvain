@@ -12,7 +12,8 @@ app.get("/stats", async (req, res) => {
     const stats = await fetchData(date);
     res.json(stats);
   } catch (e) {
-    res.status(500).send(e);
+    console.log(e);
+    res.sendStatus(500);
   }
 });
 
