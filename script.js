@@ -58,6 +58,8 @@ const fetchPullRequests = async date => {
     if (exceededDate) {
       break;
     }
+
+    page += 1;
   }
 
   return [results, prNumbers];
