@@ -1,0 +1,14 @@
+*/**/node_modules
+*/**/*.lock
+
+client/build/
+
+.git
+
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed

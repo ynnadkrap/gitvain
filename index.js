@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 
 const { fetchData } = require("./script");
 const PORT = process.env.PORT || 8080;
@@ -12,6 +13,17 @@ app.get("/stats", async (req, res) => {
     res.json(stats);
   } catch (e) {
     res.status(500).send(e);
+  }
+});
+
+app.use(
+  "/static",
+  express.static(path.join(__dirname, "client", "build", "static"))
+);
+
+app.use((req, res, next) => {
+  if (!req.route) {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   }
 });
 
